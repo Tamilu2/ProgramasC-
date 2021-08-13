@@ -1,0 +1,61 @@
+#include <iostream>
+#include <math.h>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+float Media_aritmetica(float v[],int n){ //funcion para calcular la media aritmética
+	float suma=0, cant2 = n;
+	
+		for (int i=0;i<n;i++){
+			suma=suma+v[i];
+		}
+		suma = suma/cant2;
+	return suma;
+}
+	
+float Media_geometrica(float v[],int n){ //funcion para calcular la media geométrica
+	float p=1, cant2 = n, pot=1/(cant2);
+	
+	for (int i=0;i<n;i++){
+		p=p*v[i];
+	}
+	p = pow(p,pot);
+	return p;
+}
+
+float Media_armonica(float v[], int n){ //funcion para calcular la media armónica
+	float cant2= n, suma=0;
+	for (int i=0;i<n;i++){
+		suma = suma + 1/v[i];
+	}
+	suma = cant2 / suma;
+	return suma;
+}
+
+int main(int argc, char *argv[]) {
+	srand(time(NULL)); // esto es para que cada vez que se ejecute el programa no sean los mismos números
+	float v[100]; // defino un vector con 100 lugares
+	int cantidad; // cantidad de datos a procesar
+	cout <<"ingrese la cantidad de datos a procesar: ";
+	cin >> cantidad;
+	float mediaA; //media aritmética
+	float mediaG; // media geométrica
+	float mediaAR; // media armónica
+	cout <<endl <<"DATOS: " <<endl;
+	for (int i=0;i<cantidad;i++){
+		v[i]=rand()%101; // vector con datos aleatorios
+		cout <<v[i] <<" | "; // se muestran los datos en pantalla
+	}
+	
+	mediaA = Media_aritmetica(v,cantidad); // calcula la media arítmética
+	cout <<endl << endl << "media aritmetica: " <<mediaA <<endl; // muestra en pantalla el valor de la media aritmética
+	mediaG = Media_geometrica(v, cantidad); // calcula la media geométrica
+	cout <<endl << endl << "media Geométrica: " <<mediaG <<endl; // muestra en pantalla el valor de la media geométrica
+	mediaAR = Media_armonica(v, cantidad); // calcula la media armónica
+	cout <<endl << endl << "media Armónica: " <<mediaAR <<endl; // muestra en pantalla el valor de la media armónica
+	
+	
+	return 0;
+}
+
