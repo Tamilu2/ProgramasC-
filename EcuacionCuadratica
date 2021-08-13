@@ -16,8 +16,8 @@ int main(int argc, char *argv[]) {
 		d=b*b-(4*a*c);
 		if (d>=0){
 			d=sqrt(d);
-			x1=((b*-1)+(d))/(2*a);
-			x2=((b*-1)-(d))/(2*a);
+			x1=(-b-d)/(2*a);
+			x2=(-b+d)/(2*a);
 			cout << endl <<" las raices de la ecuación " << a <<"x^2 + " << b <<"x + "<< c <<" = 0 son: " << endl;
 			if (x1==x2) cout << endl << "x1 = x2 = " << x1;
 			else{
