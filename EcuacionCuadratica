@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(int argc, char *argv[]) {
+	float a,b,c,d,x1,x2;
+	cout << endl << "Este programa encuentra las raices reales para las ecuaciones del tipo ax^2 + bx + c = 0" << endl
+		<< endl << "Para esto se pide ingresar por teclado los valores de a, b y c" << endl;
+	cout << endl << "Ingrese el valor de a: ";
+	cin >> a;
+	cout << endl << "Ingrese el valor de b: ";
+	cin >> b;
+	cout << endl << "Ingrese el valor de c: ";
+	cin >> c;
+	if (a!=0){
+		d=b*b-(4*a*c);
+		if (d>=0){
+			d=sqrt(d);
+			x1=((b*-1)+(d))/(2*a);
+			x2=((b*-1)-(d))/(2*a);
+			cout << endl <<" las raices de la ecuación " << a <<"x^2 + " << b <<"x + "<< c <<" = 0 son: " << endl;
+			if (x1==x2) cout << endl << "x1 = x2 = " << x1;
+			else{
+				cout << endl << "x1 = " << x1 << endl;
+				cout << endl << "x2 = " << x2 << endl;
+			}
+		}
+		else cout <<endl << "La función no tiene raices reales" << endl;
+	}
+	else cout << endl << "Como a = 0 no se puede resolver" << endl;
+	return 0;
+}
